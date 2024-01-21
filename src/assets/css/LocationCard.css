@@ -1,0 +1,50 @@
+:root{
+    --color-shadow: 2px 2px 7px #000000b2;
+}
+
+
+.location__body{
+    display: flex;
+    justify-content: center;
+    margin: 7em auto;
+    flex-direction: column;
+    align-items: center;
+    gap: .8em;
+    max-width: 30em;
+    width: 100%;
+    background-color: #072226;
+    border-radius: 1em;
+    box-shadow: var(--color-shadow);
+    height: 150px;
+
+
+}
+
+.location__title{
+    color: #7DBB24;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.location__list{
+    display: flex;
+    padding: 10px;
+    gap: 1em;
+}
+
+.location_item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.location__key{
+    color: white;
+    font-weight: 500;
+}
+
+.location__value{
+    color: rgba(167, 164, 164, 0.863);
+    font-weight: 400;
+    
+}

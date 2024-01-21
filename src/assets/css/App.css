@@ -1,0 +1,138 @@
+.resident__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.api__header{
+    max-width: 1300px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    margin-left: 20px;
+}
+
+.container__img{
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/img/portada.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.form__location{
+    width: 100%;
+    height: 35px;
+    /* max-width: 280px; */
+    margin-top: 4em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+}
+
+.input-container {
+    position: relative;
+  }
+  
+  .input {
+    padding: 10px;
+    height: 40px;
+    border: 2px solid #42a315;
+    border-top: none;
+    border-bottom: none;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #3d9215;
+    transition: all 0.5s;
+  }
+  
+  .input:focus {
+    box-shadow: none;
+    transition: all 0.5s;
+  }
+  
+  .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    transition: all 0.5s;
+    transform: scale(0);
+    z-index: -1;
+  }
+  
+  .input-container .topline {
+    position: absolute;
+    content: "";
+    background-color: #3d9215;
+    width: 0;
+    height: 2px;
+    right: 0;
+    top: 0;
+    transition: all 0.5s;
+  }
+  
+  .input-container input[type="text"]:focus ~ .topline {
+    width: 50%;
+    transition: all 0.5s;
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    content: "";
+    background-color: #3d9215;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline {
+    width: 100%;
+    transition: all 0.5s;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label {
+    top: -10px;
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+
+  .btn__location{
+    margin-top: 1.6em;
+  }
+
+  .pagination-previous{
+    color: white;
+  }
+
+  .pagination-previous:hover{
+    color: rgba(255, 255, 255, 0.678);
+  }
+
+.pagination-next{
+  color: white;
+}
+
+.pagination-next:hover {
+  color: rgba(255, 255, 255, 0.678);
+}
+
+.pagination{
+  padding: 40px;
+}
+
+
+
+
+

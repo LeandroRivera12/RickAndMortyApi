@@ -6,6 +6,9 @@ import useFetch from './hooks/useFetch'
 import getRandomNumber from './utils/getRandomNumber'
 import LocationCard from './components/LocationCard'
 import ResidentCard from './components/ResidentCard'
+import Pagination from '@mui/material/Pagination';
+
+
 
 
 function App() {
@@ -13,7 +16,8 @@ function App() {
   const [ inputValue, setInputValue ] = useState(locationId)
   const url = `https://rickandmortyapi.com/api/location/${inputValue}`
   const [ location, getLocation, hasError ] = useFetch(url)
-  const [ currentPage, setCurrentPage ] = useState(1)
+  const [ page, setPage ] = useState(1)
+  const [ totalResidents, setTotalResidents] = useState()
  
 
 
@@ -24,8 +28,19 @@ function App() {
     getLocation()
   }, [inputValue])
 
-   
+  useEffect(() => {
+    setTotalResidents(location?.residents.length)
+  }, [])
+  
 
+
+
+  let startIndex = (page - 1) * 5; // Índice inicial del slice
+  let endIndex = startIndex + 5; // Índice final del slice
+  let residents = location?.residents.slice(startIndex, endIndex) || [];
+  
+
+   
   const inputLocation = useRef()
    
   const handleSubmit = e => {
@@ -34,12 +49,19 @@ function App() {
   }
 
 
+  const handleChange = (e, value) => {
+     e.preventDefault()
+     setPage(value)
+
+  }
+
+
 
   return (
     <div>
       <header className='api__header'>
           <div className='container__img'>
-            <img src="public/img/portada.jpg" alt="" />
+            <img src="/img/portada.jpg" alt="" />
           </div>
       </header>
     
@@ -63,7 +85,7 @@ function App() {
               />
               <div className='resident__container'>
                 {
-                  location?.residents.map(url => (
+                  residents.map(url => (
                     <ResidentCard
                       key={url}
                       url={url}
@@ -73,8 +95,10 @@ function App() {
               </div>
             
                 </>
+
              )
          }
+         <Pagination count={parseInt(Math.ceil( totalResidents / 5))} page={page} onChange={handleChange}/>
 
 
      </div>

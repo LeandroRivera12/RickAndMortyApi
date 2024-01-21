@@ -39,7 +39,7 @@ function App() {
     <div>
       <header className='api__header'>
           <div className='container__img'>
-            
+            <img src="public/img/portada.jpg" alt="" />
           </div>
       </header>
     

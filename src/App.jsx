@@ -73,7 +73,7 @@ function App() {
         <div className="topline"></div>
         <div className="underline"></div>
         </div>
-        <button>Search</button>
+        <button className='btn-search'>Search</button>
       </form> 
         {
           hasError
